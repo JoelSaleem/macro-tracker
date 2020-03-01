@@ -1,8 +1,17 @@
 import styled from 'styled-components'
+import { FlatBtn } from './FlatBtn'
 
-const Contaier = styled.div`
+const Container = styled.div`
   padding-bottom: 12px;
   cursor: pointer;
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  grid-template-rows: repeat(4, 22px);
+`
+
+const Title = styled.span`
+  justify-self: flex-end;
+  padding-right: 12px;
 `
 
 interface DisplayTargetProps {
@@ -21,12 +30,18 @@ export const DisplayTarget = ({
   protein
 }: DisplayTargetProps) => {
   return (
-    <Contaier>
-      <div>Calories: {calories}</div>
-      <div>Protein: {protein}</div>
-      <div>Carbs: {carbs}</div>
-      <div>Fats: {fats}</div>
-      <button onClick={() => onClick()}>Edit</button>
-    </Contaier>
+    <div>
+      <Container>
+        <Title>Calories:</Title>
+        <span> {calories}</span>
+        <Title>Protein:</Title>
+        <span> {protein}</span>
+        <Title>Carbs:</Title>
+        <span> {carbs}</span>
+        <Title>Fats:</Title>
+        <span> {fats}</span>
+      </Container>
+      <FlatBtn onClick={() => onClick()}>Edit</FlatBtn>
+    </div>
   )
 }

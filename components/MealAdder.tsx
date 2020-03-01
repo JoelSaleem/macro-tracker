@@ -1,6 +1,7 @@
 import { Input } from './Input'
 import { useState } from 'react'
 import { IMeal } from '../managers/LocalStorageCurrentDayManager'
+import { FlatBtn } from './FlatBtn'
 
 interface MealAdderProps {
   onChange(data: IMeal): void
@@ -33,44 +34,46 @@ export const MealAdder = (props: MealAdderProps) => {
 
   return (
     <div>
-      <Input
-        id='name'
-        label='name'
-        onChange={onInputChanged}
-        value={data.name}
-      />
-      <Input
-        id='calories'
-        label='Cals'
-        onChange={onInputChanged}
-        value={data.calories}
-      />
-      <Input
-        id='protein'
-        label='Protein'
-        onChange={onInputChanged}
-        value={data.protein}
-      />
-      <Input
-        id='carbohydrates'
-        label='Carbs'
-        onChange={onInputChanged}
-        value={data.carbohydrates}
-      />
-      <Input
-        id='fats'
-        label='Fats'
-        onChange={onInputChanged}
-        value={data.fats}
-      />
-      <button
+      <div style={{ paddingBottom: 12 }}>
+        <Input
+          id='name'
+          label='name'
+          onChange={onInputChanged}
+          value={data.name}
+        />
+        <Input
+          id='calories'
+          label='Cals'
+          onChange={onInputChanged}
+          value={data.calories}
+        />
+        <Input
+          id='protein'
+          label='Protein'
+          onChange={onInputChanged}
+          value={data.protein}
+        />
+        <Input
+          id='carbohydrates'
+          label='Carbs'
+          onChange={onInputChanged}
+          value={data.carbohydrates}
+        />
+        <Input
+          id='fats'
+          label='Fats'
+          onChange={onInputChanged}
+          value={data.fats}
+        />
+      </div>
+      <FlatBtn
         onClick={() => {
           props.onChange({ ...data, timestamp: Date.now() })
           setData({ ...defaultData })
         }}
       >
         Save
-      </button>
+      </FlatBtn>
     </div>
   )
 }

@@ -38,7 +38,7 @@ export const CurrentDay = ({ update }: { update(): void }) => {
           />
         )
       })}
-      <div style={{paddingTop: 6}}>
+      <div style={{ paddingTop: 6 }}>
         <DisplayMeal {...total} timestamp={0} name='TOTAL' />
       </div>
       <MealAdder

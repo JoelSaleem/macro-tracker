@@ -6,7 +6,7 @@ export interface ViewSwitchOption {
   selected: boolean
 }
 
-const Button = styled.div`
+const baseButtonStyle = `
   width: 100px;
   display: flex;
   justify-content: center;
@@ -24,12 +24,31 @@ const Button = styled.div`
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  padding-right: 16px;
+  padding-left: 4px;
+`
+
+const Button = styled.div`
+  ${baseButtonStyle}
+`
+
+const SelectedButton = styled.div`
+  ${baseButtonStyle}
+  border-bottom: ${props => `1px solid ${props.theme.ForegroundColour};`} 
 `
 
 export const ViewSwitch = ({ options }: { options: ViewSwitchOption[] }) => {
   return (
     <Container>
       {options.map((opt: ViewSwitchOption) => {
+        if (opt.selected) {
+          return (
+            <SelectedButton key={opt.text} onClick={opt.onClick}>
+              {opt.text}
+            </SelectedButton>
+          )
+        }
+
         return (
           <Button key={opt.text} onClick={opt.onClick}>
             {opt.text}

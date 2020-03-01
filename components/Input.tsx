@@ -7,19 +7,21 @@ const InputElem = styled.input`
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
-  border-bottom: 1px red solid;
+  border-bottom: 1px solid ${props => props.theme.ForegroundColour};
   background-color: transparent;
   color: white;
   padding-left: 4px;
 `
 
 const Label = styled.span`
-  flex: 1;
+  justify-self: flex-end;
+  padding-right: 12px
 `
 
 const Container = styled.div`
-  display: flex;
-  max-width: 200px;
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  max-width: 300px;
   align-items: center;
 `
 

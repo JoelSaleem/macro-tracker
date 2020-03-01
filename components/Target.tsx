@@ -6,6 +6,7 @@ import {
   ITargetData
 } from '../managers/LocalStorageTargetManager'
 import { Card } from './Card'
+import { FlatBtn } from './FlatBtn'
 
 export const defaultData = {
   calories: 0,
@@ -29,15 +30,17 @@ export const Target = ({ update }: { update(): void }) => {
   if (isEditing) {
     return (
       <Card>
-        <TargetEdit
-          toggleIsEditing={toggleIsEditing}
-          data={data}
-          onChange={(key: keyof ITargetData, value: number) => {
-            setItem(key, value)
-            update()
-          }}
-        />
-        <button onClick={toggleIsEditing}>Save</button>
+        <div style={{ paddingBottom: 12 }}>
+          <TargetEdit
+            toggleIsEditing={toggleIsEditing}
+            data={data}
+            onChange={(key: keyof ITargetData, value: number) => {
+              setItem(key, value)
+              update()
+            }}
+          />
+        </div>
+        <FlatBtn onClick={toggleIsEditing}>Save</FlatBtn>
       </Card>
     )
   }
