@@ -2,7 +2,7 @@ import { useState, useEffect, useLayoutEffect } from 'react'
 import { DisplayTarget } from './DisplayTarget'
 import { TargetEdit } from './TargetEdit'
 import {
-  LocalStorageManager,
+  LocalStorageTargetManager,
   ITargetData
 } from '../managers/LocalStorageTargetManager'
 
@@ -13,11 +13,10 @@ export const defaultData = {
   carbohydrates: 0
 }
 
-const { getItem, setItem } = new LocalStorageManager()
+const { getItem, setItem } = new LocalStorageTargetManager()
 
-export const Target = () => {
+export const Target = ({ update }: { update(): void }) => {
   const [isEditing, setIsEditing] = useState(false)
-  let [version, setVersion] = useState(0)
   const toggleIsEditing = () => setIsEditing(!isEditing)
   // TODO: USE CALLBACK HOOK
 
@@ -34,7 +33,7 @@ export const Target = () => {
           data={data}
           onChange={(key: keyof ITargetData, value: number) => {
             setItem(key, value)
-            setVersion(++version) // Trigger re-render
+            update()
           }}
         />
         <button onClick={toggleIsEditing}>Save</button>

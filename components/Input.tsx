@@ -10,7 +10,7 @@ const InputElem = styled.input`
   border-bottom: 1px red solid;
   background-color: transparent;
   color: white;
-  padding-left: 4px
+  padding-left: 4px;
 `
 
 const Label = styled.span`
@@ -25,16 +25,21 @@ const Container = styled.div`
 
 interface InputProps {
   label: string
-  onChange(key: keyof ITargetData, value: number): void
-  value: number
-  id: keyof ITargetData
+  onChange(key: string, value: number | string): void
+  value: number | string
+  id: string
 }
 
 export const Input = ({ label, onChange, value, id }: InputProps) => {
   return (
     <Container>
       <Label>{label}</Label>
-      <InputElem onChange={(e: any) => { onChange(id, +e.target.value || 0)}} value={value}/>
+      <InputElem
+        onChange={(e: any) => {
+          onChange(id, e.target.value)
+        }}
+        value={value}
+      />
     </Container>
   )
 }

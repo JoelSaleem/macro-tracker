@@ -5,7 +5,7 @@ export interface ITargetData {
   fats: number
 }
 
-export class LocalStorageManager {
+export class LocalStorageTargetManager {
   isClient = (): boolean => {
     return typeof window !== 'undefined'
   }
@@ -26,10 +26,9 @@ export class LocalStorageManager {
   setItem = (key: keyof ITargetData, value: number): void => {
     if (this.isClient()) {
       const rawData = this.getItem()
-      rawData[key] = value
+      rawData[key] = +value
       const data = JSON.stringify(rawData)
-      console.log(key, value, data)
-      
+
       localStorage.setItem(this.getKey(), JSON.stringify(data))
     }
   }
@@ -45,7 +44,7 @@ export class LocalStorageManager {
     if (this.isClient()) {
       strData = localStorage.getItem(this.getKey()) || ''
     }
-    
+
     if (strData) {
       return JSON.parse(JSON.parse(strData))
     }
