@@ -7,19 +7,17 @@ export interface ViewSwitchOption {
 }
 
 const Button = styled.div`
-  border: 1px solid red;
-  border-radius: 10px;
-  max-width: 100px;
+  width: 100px;
   display: flex;
   justify-content: center;
   cursor: pointer;
 
   :hover {
-      background-color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.2);
   }
 
   :active {
-    background-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.4);
 }
 `
 

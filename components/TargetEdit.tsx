@@ -10,7 +10,6 @@ interface TargetEditProps {
 export const TargetEdit = (props: TargetEditProps) => {
   return (
     <>
-      <div onClick={props.toggleIsEditing}>Edit</div>
       <FormInput onChange={props.onChange} data={props.data} />
     </>
   )

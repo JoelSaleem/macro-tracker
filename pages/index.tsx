@@ -4,6 +4,7 @@ import CoreLayout from '../components/CoreLayout'
 export default () => {
   return (
     <>
+      <meta name='theme-color' content='#ff2200'></meta>
       <CoreLayout />
       <style jsx global>{`
         body {
@@ -11,6 +12,7 @@ export default () => {
           color: white;
           height: 100%;
           overflow: hidden;
+          font-family: Camphor, Open Sans, Segoe UI, sans-serif;
         }
 
         html {

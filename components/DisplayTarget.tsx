@@ -22,7 +22,6 @@ export const DisplayTarget = ({
 }: DisplayTargetProps) => {
   return (
     <Contaier>
-      <h1>Target</h1>
       <div>Calories: {calories}</div>
       <div>Protein: {protein}</div>
       <div>Carbs: {carbs}</div>

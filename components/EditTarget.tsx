@@ -5,7 +5,21 @@ const Contaier = styled.div`
   cursor: pointer;
 `
 
-export const DisplayTarget = ({ onClick, calories, fats, carbs, protein }) => {
+interface DisplayTargetProps {
+  onClick(): void
+  calories: number
+  fats: number
+  carbs: number
+  protein: number
+}
+
+export const DisplayTarget = ({
+  onClick,
+  calories,
+  fats,
+  carbs,
+  protein
+}: DisplayTargetProps) => {
   return (
     <Contaier onClick={onClick}>
       <h1>Calories: {calories}</h1>

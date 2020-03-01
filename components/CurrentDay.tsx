@@ -5,6 +5,7 @@ import {
 import { MealAdder } from './MealAdder'
 import { useState } from 'react'
 import { DisplayMeal } from './DisplayMeal'
+import { Card } from './Card'
 
 const {
   listMeals,
@@ -23,8 +24,7 @@ export const CurrentDay = ({ update }: { update(): void }) => {
   const total = getTotalForDay()
 
   return (
-    <div>
-      <h1>Current Day</h1>
+    <Card>
       {data.map((meal, i) => {
         return (
           <DisplayMeal
@@ -38,13 +38,15 @@ export const CurrentDay = ({ update }: { update(): void }) => {
           />
         )
       })}
-      <DisplayMeal {...total} timestamp={0} name='TOTAL' />
+      <div style={{paddingTop: 6}}>
+        <DisplayMeal {...total} timestamp={0} name='TOTAL' />
+      </div>
       <MealAdder
         onChange={data => {
           addMeal(data)
           update()
         }}
       />
-    </div>
+    </Card>
   )
 }
