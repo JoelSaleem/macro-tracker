@@ -24,7 +24,7 @@ export const CurrentDay = ({ update }: { update(): void }) => {
 
   return (
     <div>
-      <div>Current Day</div>
+      <h1>Current Day</h1>
       {data.map((meal, i) => {
         return (
           <DisplayMeal

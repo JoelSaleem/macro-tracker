@@ -7,17 +7,14 @@ const Layout = styled.div`
   grid-template-columns: 50px 1fr;
 `
 const BodyContainer = styled.div`
-  grid-area: 2/2/3/3;
+  padding-left: 12px;
+  padding-top: 12px;
 `
 
 export default () => {
   return (
-    <Layout>
-      <div>Navbar</div>
-      <h1>TItle</h1>
-      <BodyContainer>
-        <Tracker />
-      </BodyContainer>
-    </Layout>
+    <BodyContainer>
+      <Tracker />
+    </BodyContainer>
   )
 }

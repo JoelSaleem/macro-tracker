@@ -66,7 +66,6 @@ export const MealAdder = (props: MealAdderProps) => {
       <button
         onClick={() => {
           props.onChange({ ...data, timestamp: Date.now() })
-          console.log('will clear data')
           setData({ ...defaultData })
         }}
       >
