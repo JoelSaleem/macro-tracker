@@ -24,7 +24,7 @@ const baseButtonStyle = `
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-right: 16px;
   padding-left: 4px;
 `
