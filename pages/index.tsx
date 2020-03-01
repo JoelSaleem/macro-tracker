@@ -20,8 +20,7 @@ export default () => {
           body {
             background-color: #1e1e1e;
             color: white;
-            height: 100%;
-            overflow: hidden;
+            overflow-y: auto;
             font-family: Camphor, Open Sans, Segoe UI, sans-serif;
           }
 

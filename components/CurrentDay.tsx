@@ -3,7 +3,6 @@ import {
   IMeal
 } from '../managers/LocalStorageCurrentDayManager'
 import { MealAdder } from './MealAdder'
-import { useState } from 'react'
 import { DisplayMeal } from './DisplayMeal'
 import { Card } from './Card'
 
@@ -36,7 +35,7 @@ export const CurrentDay = ({ update }: { update(): void }) => {
           carbohydrates='carbs'
           calories='kcal'
           name=''
-        />
+        /> 
       </div>
 
       {data.map((meal, i) => {
