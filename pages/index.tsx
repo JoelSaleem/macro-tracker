@@ -14,7 +14,7 @@ export default () => {
   return (
     <ThemeProvider theme={ThemeMain}>
       <>
-        <meta name='theme-color' content='#ff2200'></meta>
+        <meta name='theme-color' content='#217bf3'></meta>
         <CoreLayout />
         <style jsx global>{`
           body {

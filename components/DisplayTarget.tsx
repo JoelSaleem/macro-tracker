@@ -15,7 +15,8 @@ const Title = styled.span`
 `
 
 interface DisplayTargetProps {
-  onClick: Function
+  onClick?: Function
+  showEdit?: boolean
   calories: number
   protein: number
   fats: number
@@ -27,7 +28,8 @@ export const DisplayTarget = ({
   calories,
   fats,
   carbohydrates: carbs,
-  protein
+  protein,
+  showEdit
 }: DisplayTargetProps) => {
   return (
     <div>
@@ -41,7 +43,7 @@ export const DisplayTarget = ({
         <Title>Fats:</Title>
         <span> {fats}</span>
       </Container>
-      <FlatBtn onClick={() => onClick()}>Edit</FlatBtn>
+      {showEdit && <FlatBtn onClick={() => onClick && onClick()}>Edit</FlatBtn>}
     </div>
   )
 }

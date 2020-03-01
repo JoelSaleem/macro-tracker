@@ -1,6 +1,7 @@
 import { LocalStorageCurrentDayManager } from '../managers/LocalStorageCurrentDayManager'
 import { LocalStorageTargetManager } from '../managers/LocalStorageTargetManager'
 import { Card } from './Card'
+import { DisplayTarget } from './DisplayTarget'
 
 const { getTotalForDay } = new LocalStorageCurrentDayManager()
 const { getItem } = new LocalStorageTargetManager()
@@ -16,10 +17,17 @@ export const Remaining = () => {
 
   return (
     <Card>
-      <div>Calories: {calories}</div>
+      <DisplayTarget
+        calories={calories}
+        fats={fats}
+        carbohydrates={carbohydrates}
+        protein={protein}
+      />
+
+      {/* <div>Calories: {calories}</div>
       <div>Protein: {protein}</div>
       <div>Carbs: {carbohydrates}</div>
-      <div>Fats: {fats}</div>
+      <div>Fats: {fats}</div> */}
     </Card>
   )
 }

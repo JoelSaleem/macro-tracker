@@ -11,6 +11,7 @@ const baseButtonStyle = `
   display: flex;
   justify-content: center;
   cursor: pointer;
+  padding-bottom: 4px;
 
   :hover {
       color: rgba(255, 255, 255, 0.2);

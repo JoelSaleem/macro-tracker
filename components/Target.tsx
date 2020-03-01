@@ -47,7 +47,7 @@ export const Target = ({ update }: { update(): void }) => {
 
   return (
     <Card>
-      <DisplayTarget onClick={toggleIsEditing} {...data} />
+      <DisplayTarget showEdit onClick={toggleIsEditing} {...data} />
     </Card>
   )
 }

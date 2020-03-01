@@ -22,25 +22,31 @@ export const CurrentDay = ({ update }: { update(): void }) => {
   }
 
   const total = getTotalForDay()
+  const onDelete = (idx: number | undefined) => {
+    removeMeal(idx)
+    update()
+  }
 
   return (
     <Card>
-      {data.map((meal, i) => {
-        return (
-          <DisplayMeal
-            key={i}
-            index={i}
-            {...meal}
-            onDelete={(idx: number | undefined) => {
-              removeMeal(idx)
-              update()
-            }}
-          />
-        )
-      })}
       <div style={{ paddingTop: 6 }}>
-        <DisplayMeal {...total} timestamp={0} name='TOTAL' />
+        <DisplayMeal
+          fats='fats'
+          protein='protein'
+          carbohydrates='carbs'
+          calories='kcal'
+          name=''
+        />
       </div>
+
+      {data.map((meal, i) => {
+        return <DisplayMeal key={i} index={i} {...meal} onDelete={onDelete} />
+      })}
+
+      <div style={{ paddingTop: 6 }}>
+        <DisplayMeal {...total} name='TOTAL' />
+      </div>
+
       <MealAdder
         onChange={data => {
           addMeal(data)
