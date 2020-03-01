@@ -21,8 +21,9 @@ const Label = styled.span`
 const Container = styled.div`
   display: grid;
   grid-template-columns: 75px 1fr;
-  max-width: 300px;
   align-items: center;
+  padding-bottom: 12px;
+  padding-right: 16px;
 `
 
 interface InputProps {

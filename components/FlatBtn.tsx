@@ -7,7 +7,7 @@ const Button = styled.div`
   display: flex;
   justify-content: center;
   height: 24px;
-  width: 100px;
+  margin-right: 12px;
   background-color: ${props => props.theme.ForegroundColour};
 
   :hover {

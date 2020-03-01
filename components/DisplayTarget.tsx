@@ -6,8 +6,8 @@ const Container = styled.div`
   cursor: pointer;
   display: grid;
   grid-template-columns: 75px 1fr;
-  grid-template-rows: repeat(4, 22px);
-`
+  grid-template-rows: repeat(4, 34px);
+` 
 
 const Title = styled.span`
   justify-self: flex-end;
