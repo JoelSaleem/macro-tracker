@@ -66,14 +66,16 @@ export const MealAdder = (props: MealAdderProps) => {
           value={data.fats}
         />
       </div>
-      <FlatBtn
-        onClick={() => {
-          props.onChange({ ...data, timestamp: Date.now() })
-          setData({ ...defaultData })
-        }}
-      >
-        Save
-      </FlatBtn>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <FlatBtn
+          onClick={() => {
+            props.onChange({ ...data, timestamp: Date.now() })
+            setData({ ...defaultData })
+          }}
+        >
+          Save
+        </FlatBtn>
+      </div>
     </div>
   )
 }

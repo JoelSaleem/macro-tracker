@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const Button = styled.div`
+  flex: 1;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
@@ -8,6 +9,7 @@ const Button = styled.div`
   justify-content: center;
   height: 24px;
   margin-right: 12px;
+  max-width: 600px;
   background-color: ${props => props.theme.ForegroundColour};
 
   :hover {

@@ -7,7 +7,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 75px 1fr;
   grid-template-rows: repeat(4, 34px);
-` 
+`
 
 const Title = styled.span`
   justify-self: flex-end;
@@ -43,7 +43,11 @@ export const DisplayTarget = ({
         <Title>Fats:</Title>
         <span> {fats}</span>
       </Container>
-      {showEdit && <FlatBtn onClick={() => onClick && onClick()}>Edit</FlatBtn>}
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        {showEdit && (
+          <FlatBtn onClick={() => onClick && onClick()}>Edit</FlatBtn>
+        )}
+      </div>
     </div>
   )
 }

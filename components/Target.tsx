@@ -40,7 +40,9 @@ export const Target = ({ update }: { update(): void }) => {
             }}
           />
         </div>
-        <FlatBtn onClick={toggleIsEditing}>Save</FlatBtn>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <FlatBtn onClick={toggleIsEditing}>Save</FlatBtn>
+        </div>
       </Card>
     )
   }
