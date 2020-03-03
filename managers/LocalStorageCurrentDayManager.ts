@@ -60,10 +60,10 @@ export class LocalStorageCurrentDayManager {
 
     data.forEach((meal: IMeal) => {
       const { calories, protein, fats, carbohydrates } = meal || {}
-      total.calories += calories || 0
-      total.protein += protein || 0
-      total.fats += fats || 0
-      total.carbohydrates += carbohydrates || 0
+      total.calories += +calories
+      total.protein += +protein
+      total.fats += +fats
+      total.carbohydrates += +carbohydrates
     })
 
     return total

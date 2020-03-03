@@ -7,30 +7,43 @@ interface MealAdderProps {
   onChange(data: IMeal): void
 }
 
-const defaultData: IMeal = {
+interface InitialData {
+  name: string
+  calories: string
+  protein: string
+  carbohydrates: string
+  fats: string
+  timestamp: number
+}
+const defaultData: InitialData = {
   name: '',
-  calories: 0,
-  protein: 0,
-  carbohydrates: 0,
-  fats: 0,
+  calories: '',
+  protein: '',
+  carbohydrates: '',
+  fats: '',
   timestamp: Date.now()
 }
 
 export const MealAdder = (props: MealAdderProps) => {
   const [data, setData] = useState(defaultData)
 
-  const onInputChanged = (id: keyof IMeal, val: string | number): void => {
-    if (id === 'name' && typeof val === 'string') {
-      data[id] = val
-    } else if (id !== 'name') {
+  const onInputChanged = (
+    id: keyof InitialData,
+    val: string | number
+  ): void => {
+    if (id !== 'timestamp') {
       if (val === NaN) {
-        val = 0
+        val = '0'
+      } else {
+        val = '' + val
       }
-      data[id] = +val
+      data[id] = val
     }
 
     setData({ ...data })
   }
+
+  console.log(data)
 
   return (
     <div>
@@ -69,7 +82,14 @@ export const MealAdder = (props: MealAdderProps) => {
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <FlatBtn
           onClick={() => {
-            props.onChange({ ...data, timestamp: Date.now() })
+            props.onChange({
+              name: data.name,
+              calories: +data.calories,
+              fats: +data.fats,
+              protein: +data.protein,
+              carbohydrates: +data.carbohydrates,
+              timestamp: Date.now()
+            })
             setData({ ...defaultData })
           }}
         >
