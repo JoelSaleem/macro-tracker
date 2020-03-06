@@ -48,8 +48,16 @@ export const Target = ({ update }: { update(): void }) => {
   }
 
   return (
-    <Card>
-      <DisplayTarget showEdit onClick={toggleIsEditing} {...data} />
-    </Card>
+    <div>
+      <Card>
+        <DisplayTarget showEdit onClick={toggleIsEditing} {...data} />
+      </Card>
+      <Card>
+        <b>Gaining Weight</b>
+        <p>When gaining weight, aim to gain 0.5-1% of bodyweight per month.</p>
+        <b>Losing Weight</b>
+        <p>When loosing weight, aim to gain 0.5-1% of bodyweight per week.</p>
+      </Card>
+    </div>
   )
 }
