@@ -15,6 +15,7 @@ export default () => {
     <ThemeProvider theme={ThemeMain}>
       <>
         <meta name='theme-color' content='#217bf3'></meta>
+        <title>Macro Tracker</title>
         <CoreLayout />
         <style jsx global>{`
           body {
