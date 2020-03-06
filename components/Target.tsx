@@ -27,9 +27,11 @@ export const Target = ({ update }: { update(): void }) => {
     data = getItem()
   }
 
+  let Target = <DisplayTarget showEdit onClick={toggleIsEditing} {...data} />
+
   if (isEditing) {
-    return (
-      <Card>
+    Target = (
+      <>
         <div style={{ paddingBottom: 12 }}>
           <TargetEdit
             toggleIsEditing={toggleIsEditing}
@@ -43,15 +45,13 @@ export const Target = ({ update }: { update(): void }) => {
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <FlatBtn onClick={toggleIsEditing}>Save</FlatBtn>
         </div>
-      </Card>
+      </>
     )
   }
 
   return (
     <div>
-      <Card>
-        <DisplayTarget showEdit onClick={toggleIsEditing} {...data} />
-      </Card>
+      <Card>{Target}</Card>
       <Card>
         <b>Gaining Weight</b>
         <p>When gaining weight, aim to gain 0.5-1% of bodyweight per month.</p>
