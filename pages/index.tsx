@@ -13,23 +13,8 @@ const ThemeMain = {
 }
 
 export default () => {
-  useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      console.log('trying to register', navigator.serviceWorker)
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then(registration => {
-          console.log('service worker registration successful: ', registration)
-        })
-        .catch(err => {
-          console.warn('service worker registration failed', err.message)
-        })
-    }
-  }, [])
-
   return (
-    <ThemeProvider theme={ThemeMain}>
-      <>
+      <ThemeProvider theme={ThemeMain}>
         <Head>
           <meta name='theme-color' content='#217bf3'></meta>
           <link rel='manifest' href='../static/manifest.json' />
@@ -48,7 +33,6 @@ export default () => {
             height: 100%;
           }
         `}</style>
-      </>
-    </ThemeProvider>
+      </ThemeProvider>
   )
 }

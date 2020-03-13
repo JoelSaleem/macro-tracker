@@ -12,9 +12,9 @@ app.prepare().then(() => {
     const parsedUrl = parse(req.url, true)
     const { pathname } = parsedUrl
 
-    if (pathname === '/sw.js') {
-      res.setHeader('content-type', 'text/javascript')
-      createReadStream('./static/serviceWorker.js').pipe(res)
+    if (pathname === '/sw.js' || pathname.startsWith('/workbox-')) {
+      const filePath = join(__dirname, '.next', pathname)
+      app.serveStatic(req, res, filePath)
     } else {
       handle(req, res, parsedUrl)
     }
