@@ -54,9 +54,14 @@ export const Target = ({ update }: { update(): void }) => {
       <Card>{Target}</Card>
       <Card>
         <b>Gaining Weight</b>
-        <p>When gaining weight, aim to gain 0.5-1% of bodyweight per month.</p>
+        <p>
+          When gaining weight, aim to gain 0.5-1% of bodyweight per <b>month</b>
+          .
+        </p>
         <b>Losing Weight</b>
-        <p>When loosing weight, aim to gain 0.5-1% of bodyweight per week.</p>
+        <p>
+          When loosing weight, aim to gain 0.5-1% of bodyweight per <b>week</b>.
+        </p>
       </Card>
     </div>
   )

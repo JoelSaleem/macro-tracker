@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next",
+    "dev": "node server.js",
     "start": "next start",
     "build": "next build"
   },
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/JoelSaleem/macro-tracker#readme",
   "dependencies": {
     "@types/styled-components": "^5.0.1",
+    "@zeit/next-typescript": "^1.1.1",
     "core-js": "^3.6.4",
     "next": "^9.2.2",
     "react": "^16.13.0",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@types/node": "^13.7.0",
     "@types/react": "^16.9.19",
+    "sw-precache-webpack-plugin": "^1.0.0",
     "typescript": "^3.7.5"
   }
 }

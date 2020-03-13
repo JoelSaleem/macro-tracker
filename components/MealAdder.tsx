@@ -43,8 +43,6 @@ export const MealAdder = (props: MealAdderProps) => {
     setData({ ...data })
   }
 
-  console.log(data)
-
   return (
     <div>
       <div style={{ paddingBottom: 12 }}>
