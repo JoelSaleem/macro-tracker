@@ -17,7 +17,8 @@ export default () => {
       <ThemeProvider theme={ThemeMain}>
         <Head>
           <meta name='theme-color' content='#217bf3'></meta>
-          <link rel='manifest' href='../static/manifest.json' />
+          <link rel='manifest' href='/manifest.json' />
+          <meta name="msapplication-starturl" content="/" />
           <title>Macro Tracker</title>
         </Head>
         <CoreLayout />
