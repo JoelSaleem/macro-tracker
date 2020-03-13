@@ -14,7 +14,7 @@ app.prepare().then(() => {
 
     if (pathname === '/sw.js') {
       res.setHeader('content-type', 'text/javascript')
-      createReadStream('./offline/serviceWorker.js').pipe(res)
+      createReadStream('./static/serviceWorker.js').pipe(res)
     } else {
       handle(req, res, parsedUrl)
     }
