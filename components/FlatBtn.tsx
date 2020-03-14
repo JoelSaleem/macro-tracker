@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const Button = styled.div`
+  color: ${props => props.theme.MenuBtnCol};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +15,7 @@ const Button = styled.div`
   margin-right: 12px;
   max-width: 600px;
   background-color: ${props => props.theme.ForegroundColour};
+  cursor: pointer;
 
   :hover {
     background-color: ${props => props.theme.ForegroundAccent1};

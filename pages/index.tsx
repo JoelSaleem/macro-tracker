@@ -10,7 +10,9 @@ const ThemeMain = {
   TextColour: 'white',
   ForegroundColour: '#217bf3',
   ForegroundAccent1: '#388dff',
-  ForegroundAccent2: '#5ea3ff'
+  ForegroundAccent2: '#5ea3ff',
+  MenuBtnCol: 'white',
+  MenuUnderline: '#217bf3'
 }
 
 const LightTheme = {
@@ -18,8 +20,10 @@ const LightTheme = {
   BackgroundAccent: '#e4e4e4',
   TextColour: 'black',
   ForegroundColour: '#1155b0',
-  ForegroundAccent1: '#e4e4e4',
-  ForegroundAccent2: '#5ea3ff'
+  ForegroundAccent1: '#3889f6',
+  ForegroundAccent2: '#74acf8',
+  MenuBtnCol: 'white',
+  MenuUnderline: 'white'
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -63,8 +67,8 @@ export default () => {
         <link rel='apple-touch-icon' href='icons/icon192.png' />
       </Head>
       <GlobalStyle />
-      <ContrastButton onClick={switchTheme}>Theme</ContrastButton>
       <CoreLayout />
+      <ContrastButton onClick={switchTheme}>Theme</ContrastButton>
     </ThemeProvider>
   )
 }

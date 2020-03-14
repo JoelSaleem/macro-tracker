@@ -30,12 +30,15 @@ const Container = styled.div`
 `
 
 const Button = styled.div`
+  color: ${(props: { theme: { MenuBtnCol: string } }) =>
+    props.theme.MenuBtnCol};
   ${baseButtonStyle}
 `
 
 const SelectedButton = styled.div`
   ${baseButtonStyle}
-  border-bottom: ${props => `1px solid ${props.theme.ForegroundColour};`} 
+  color: ${(props: { theme: {MenuBtnCol: string} }) => props.theme.MenuBtnCol};
+  border-bottom: ${props => `1px solid ${props.theme.MenuUnderline};`} 
 `
 
 export const ViewSwitch = ({ options }: { options: ViewSwitchOption[] }) => {
