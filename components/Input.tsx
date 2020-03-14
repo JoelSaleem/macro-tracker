@@ -9,13 +9,13 @@ const InputElem = styled.input`
   border-right: 0px;
   border-bottom: 1px solid ${props => props.theme.ForegroundColour};
   background-color: transparent;
-  color: white;
+  color: ${props => props.theme.TextColour};
   padding-left: 4px;
 `
 
 const Label = styled.span`
   justify-self: flex-end;
-  padding-right: 12px
+  padding-right: 12px;
 `
 
 const Container = styled.div`
