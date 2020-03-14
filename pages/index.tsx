@@ -14,26 +14,28 @@ const ThemeMain = {
 
 export default () => {
   return (
-      <ThemeProvider theme={ThemeMain}>
-        <Head>
-          <meta name='theme-color' content='#217bf3'></meta>
-          <link rel='manifest' href='/manifest.json' />
-          <meta name="msapplication-starturl" content="/" />
-          <title>Macro Tracker</title>
-        </Head>
-        <CoreLayout />
-        <style jsx global>{`
-          body {
-            background-color: #1e1e1e;
-            color: white;
-            overflow-y: auto;
-            font-family: Camphor, Open Sans, Segoe UI, sans-serif;
-          }
+    <ThemeProvider theme={ThemeMain}>
+      <Head>
+        <meta name='theme-color' content='#217bf3'></meta>
+        <link rel='manifest' href='/manifest.json' />
+        <meta name='msapplication-starturl' content='/' />
+        <title>Macro Tracker</title>
+        <link rel='icon' type='image/png' href='icons/icon192.png' />
+        <link rel='apple-touch-icon' href='icons/icon192.png' />
+      </Head>
+      <CoreLayout />
+      <style jsx global>{`
+        body {
+          background-color: #1e1e1e;
+          color: white;
+          overflow-y: auto;
+          font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+        }
 
-          html {
-            height: 100%;
-          }
-        `}</style>
-      </ThemeProvider>
+        html {
+          height: 100%;
+        }
+      `}</style>
+    </ThemeProvider>
   )
 }
