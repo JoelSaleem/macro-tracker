@@ -1,30 +1,10 @@
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import CoreLayout from '../components/CoreLayout'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import { ContrastButton } from '../components/ContrastButton'
+import {appThemes} from '../themes'
 
-const ThemeMain = {
-  BackgroundMain: '#1e1e1e',
-  BackgroundAccent: '#303030',
-  TextColour: 'white',
-  ForegroundColour: '#217bf3',
-  ForegroundAccent1: '#388dff',
-  ForegroundAccent2: '#5ea3ff',
-  MenuBtnCol: 'white',
-  MenuUnderline: '#217bf3'
-}
-
-const LightTheme = {
-  BackgroundMain: '#217bf3',
-  BackgroundAccent: '#e4e4e4',
-  TextColour: 'black',
-  ForegroundColour: '#1155b0',
-  ForegroundAccent1: '#3889f6',
-  ForegroundAccent2: '#74acf8',
-  MenuBtnCol: 'white',
-  MenuUnderline: 'white'
-}
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -54,10 +34,10 @@ const useTheme = (length: number) => {
 }
 
 export default () => {
-  const themes = [ThemeMain, LightTheme]
-  const [idx, switchTheme] = useTheme(themes.length)
+  const [idx, switchTheme] = useTheme(appThemes.length)
   return (
-    <ThemeProvider theme={themes[idx]}>
+    <ThemeProvider theme={appThemes[idx]}>
+      <GlobalStyle />
       <Head>
         <meta name='theme-color' content='#217bf3'></meta>
         <link rel='manifest' href='/manifest.json' />
@@ -66,7 +46,6 @@ export default () => {
         <link rel='icon' type='image/png' href='icons/icon192.png' />
         <link rel='apple-touch-icon' href='icons/icon192.png' />
       </Head>
-      <GlobalStyle />
       <CoreLayout />
       <ContrastButton onClick={switchTheme}>Theme</ContrastButton>
     </ThemeProvider>

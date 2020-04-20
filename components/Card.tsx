@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   margin-top: 16px;
   margin-bottom: 6px;
   margin-right: 12px;
+  width: 100%;
 `
 
 export const Card = ({ children }: { children: any }) => {

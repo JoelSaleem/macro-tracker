@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Target } from './Target'
 import { CurrentDay } from './CurrentDay'
 import { Remaining } from './Remaining'
@@ -7,8 +8,22 @@ import { ViewSwitch, ViewSwitchOption } from './ViewSwitch'
 export enum View {
   Target,
   CurrentDay,
-  Remaining
+  Remaining,
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+`
+
+const CardWrapper = styled.div`
+  flex: 1;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+`
 
 export const Tracker = () => {
   const [version, setVersion] = useState(0)
@@ -21,30 +36,44 @@ export const Tracker = () => {
       onClick() {
         setView(View.Target)
       },
-      selected: view === View.Target
+      selected: view === View.Target,
     },
     {
       text: 'Today',
       onClick() {
         setView(View.CurrentDay)
       },
-      selected: view === View.CurrentDay
+      selected: view === View.CurrentDay,
     },
     {
       text: 'Remaining',
       onClick() {
         setView(View.Remaining)
       },
-      selected: view === View.Remaining
-    }
+      selected: view === View.Remaining,
+    },
   ]
 
   return (
     <>
       <ViewSwitch options={options} />
-      {view === View.Target && <Target update={update} />}
-      {view === View.CurrentDay && <CurrentDay update={update} />}
-      {view === View.Remaining && <Remaining />}
+      <Container>
+        {view === View.Target && (
+          <CardWrapper>
+            <Target update={update} />
+          </CardWrapper>
+        )}
+        {view === View.CurrentDay && (
+          <CardWrapper>
+            <CurrentDay update={update} />
+          </CardWrapper>
+        )}
+        {view === View.Remaining && (
+          <CardWrapper>
+            <Remaining />
+          </CardWrapper>
+        )}
+      </Container>
     </>
   )
 }
