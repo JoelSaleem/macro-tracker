@@ -3,7 +3,7 @@ import { DisplayTarget } from './DisplayTarget'
 import { TargetEdit } from './TargetEdit'
 import {
   LocalStorageTargetManager,
-  ITargetData
+  ITargetData,
 } from '../managers/LocalStorageTargetManager'
 import { Card } from './Card'
 import { FlatBtn } from './FlatBtn'
@@ -12,7 +12,7 @@ export const defaultData = {
   calories: 0,
   fats: 0,
   protein: 0,
-  carbohydrates: 0
+  carbohydrates: 0,
 }
 
 const { getItem, setItem } = new LocalStorageTargetManager()
@@ -31,7 +31,7 @@ export const Target = ({ update }: { update(): void }) => {
 
   if (isEditing) {
     Target = (
-      <>
+      <div style={{ width: '100%' }}>
         <div style={{ paddingBottom: 12 }}>
           <TargetEdit
             toggleIsEditing={toggleIsEditing}
@@ -45,12 +45,12 @@ export const Target = ({ update }: { update(): void }) => {
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <FlatBtn onClick={toggleIsEditing}>Save</FlatBtn>
         </div>
-      </>
+      </div>
     )
   }
 
   return (
-    <div>
+    <div style={{ width: '100%' }}>
       <Card>{Target}</Card>
       <Card>
         <b>Gaining Weight</b>

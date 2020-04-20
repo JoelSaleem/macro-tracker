@@ -29,36 +29,47 @@ const Container = styled.div`
   padding-left: 4px;
 `
 
+const InnerContainer = styled.div`
+  flex: 1;
+  max-width: 700px;
+  display: flex;
+`
+
 const Button = styled.div`
   color: ${(props: { theme: { MenuBtnCol: string } }) =>
     props.theme.MenuBtnCol};
   ${baseButtonStyle}
+  flex: 1;
 `
 
 const SelectedButton = styled.div`
   ${baseButtonStyle}
-  color: ${(props: { theme: {MenuBtnCol: string} }) => props.theme.MenuBtnCol};
-  border-bottom: ${props => `1px solid ${props.theme.MenuUnderline};`} 
+  color: ${(props: { theme: { MenuBtnCol: string } }) =>
+    props.theme.MenuBtnCol};
+  border-bottom: ${(props) => `1px solid ${props.theme.MenuUnderline};`} 
+  flex: 1;
 `
 
 export const ViewSwitch = ({ options }: { options: ViewSwitchOption[] }) => {
   return (
     <Container>
-      {options.map((opt: ViewSwitchOption) => {
-        if (opt.selected) {
-          return (
-            <SelectedButton key={opt.text} onClick={opt.onClick}>
-              {opt.text}
-            </SelectedButton>
-          )
-        }
+      <InnerContainer>
+        {options.map((opt: ViewSwitchOption) => {
+          if (opt.selected) {
+            return (
+              <SelectedButton key={opt.text} onClick={opt.onClick}>
+                {opt.text}
+              </SelectedButton>
+            )
+          }
 
-        return (
-          <Button key={opt.text} onClick={opt.onClick}>
-            {opt.text}
-          </Button>
-        )
-      })}
+          return (
+            <Button key={opt.text} onClick={opt.onClick}>
+              {opt.text}
+            </Button>
+          )
+        })}
+      </InnerContainer>
     </Container>
   )
 }
